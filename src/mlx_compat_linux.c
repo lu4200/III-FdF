@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   mlx_compat_linux.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lucas <lucas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/25 13:29:59 by lucas             #+#    #+#             */
-/*   Updated: 2024/06/25 14:02:04 by lucas            ###   ########.fr       */
+/*   Created: 2024/06/25 14:04:25 by lucas             #+#    #+#             */
+/*   Updated: 2024/06/25 14:06:42 by lucas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/fdf.h"
+#include "fdf.h"
+#include "../inc/mlx_linux/mlx_int.h"
 
-
-
-int	main(void)
+int	mlx2_destroy_display(t_xvar *xvar)
 {
-	void	*mlx;
-	void	*mlx_win;
-
-	mlx = mlx_init();
-	mlx_win = mlx_new_window(mlx, 1920, 1080, "Hello world!");
-	mlx_loop(mlx);
+	mlx_destroy_display(xvar);
+	free(xvar);
+	return (1);
 }
